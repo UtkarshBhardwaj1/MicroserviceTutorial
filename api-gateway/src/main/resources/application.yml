@@ -1,0 +1,30 @@
+server:
+    port: 8080
+spring:
+    application:
+        name: api-gateway
+    cloud:
+        gateway:
+            routes:
+            -   id: UserService
+                predicates:
+                - 'Path=/api/users/**  '
+                uri: 'lb://UserService  '
+            -   id: OrderService
+                predicates:
+                - 'Path=/api/orders/**  '
+                uri: lb://OrderService
+            -   id: PaymentService
+                predicates:
+                - 'Path=/api/payments/**  '
+                uri: lb://PaymentService
+            -   id: ProductService
+                predicates:
+                - 'Path=/api/products/**  '
+                uri: lb://ProductService
+            -   id: InventoryService
+                predicates:
+                - 'Path=/api/inventory/**  '
+                uri: lb://InventoryService
+    config:
+        import: optional:configserver:http://localhost:8888

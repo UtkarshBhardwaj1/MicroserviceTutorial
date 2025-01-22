@@ -1,0 +1,21 @@
+server:
+  port: 8888  # Port for the config server
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xplorg25/microservice-configs-utkarsh
+          clone-on-start: true		
+          password: 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
+          username: xplorg25
+  application:
+    name:    ConfigService       # Optionally, you can use a classpath location
+          # search-locations: classpath:/config/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#spring.data.mongodb.uri=mongodb://localhost:27017/userdb
