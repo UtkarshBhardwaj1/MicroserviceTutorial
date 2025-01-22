@@ -6,10 +6,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/xplorg25/microservice-configs-utkarsh
+          uri: https://github.com/<user-name>/<repo-name>
           clone-on-start: true		
-          password: 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
-          username: xplorg25
+          password: <pwd>
+          username: <user>
   application:
     name:    ConfigService       # Optionally, you can use a classpath location
           # search-locations: classpath:/config/
